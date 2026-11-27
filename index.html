@@ -16,23 +16,47 @@
 <div id="site-navbar"></div>
 <main id="main">
 
-<section class="hero hero--home">
-  <img class="hero__bg" src="https://images.unsplash.com/photo-1706353399656-210cca727a33?auto=format&fit=crop&q=75&w=1800" alt="" width="1440" height="756" fetchpriority="high">
+<section class="hero hero--home" data-hero-slider aria-roledescription="carousel" aria-label="Clinic and Sports Physiotherapy Highlights">
+  <div class="hero__slides">
+    <figure class="hero__slide is-active" aria-hidden="false">
+      <img src="assets/img/gallery/clinic-storefront-entrance.jpg" alt="Health &amp; Sport Physiotherapy Center clinic storefront in Jankipuram, Lucknow" width="1600" height="1204" fetchpriority="high">
+    </figure>
+    <figure class="hero__slide" aria-hidden="true">
+      <img src="assets/img/gallery/sports-electrotherapy-session.jpg" alt="Sports electrotherapy and targeted muscle rehabilitation session" width="1600" height="1200">
+    </figure>
+    <figure class="hero__slide" aria-hidden="true">
+      <img src="assets/img/gallery/dr-gaurav-shukla-desk.jpg" alt="Dr. Gaurav Shukla consultation desk and orthopaedic joint models" width="1600" height="1204">
+    </figure>
+    <figure class="hero__slide" aria-hidden="true">
+      <img src="assets/img/gallery/athlete-manual-spine-therapy.jpg" alt="Physiotherapist performing manual spine therapy for an athlete" width="1200" height="1600" style="object-position:center 65%">
+    </figure>
+    <figure class="hero__slide" aria-hidden="true">
+      <img src="assets/img/gallery/cupping-therapy-clinical.jpg" alt="Clinical cupping therapy for back and muscle recovery" width="1600" height="1200">
+    </figure>
+  </div>
   <div class="hero__glow" aria-hidden="true"><img src="assets/img/hero-glow.svg" alt=""></div>
   <div class="hero__content">
     <h1 class="display hero__title"><span>Move Better. Live Stronger.</span> <span>With Health &amp; Sport Physio</span></h1>
     <p class="hero__lead">Lucknow’s trusted physiotherapy center in Jankipuram — expert care for sports injuries, back pain, post-surgery recovery and more. Rated 4.9 on Google.</p>
     <a class="btn btn--light" href="services.html">Explore Services</a>
   </div>
-  <div class="hero__dots" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <button class="hero__arrow hero__arrow--prev" type="button" aria-label="Previous slide">&#8249;</button>
+  <button class="hero__arrow hero__arrow--next" type="button" aria-label="Next slide">&#8250;</button>
+  <div class="hero__dots" role="tablist" aria-label="Choose a highlight slide">
+    <button type="button" class="is-active" role="tab" aria-selected="true" aria-label="Slide 1: Clinic Entrance"></button>
+    <button type="button" role="tab" aria-selected="false" aria-label="Slide 2: Sports Electrotherapy"></button>
+    <button type="button" role="tab" aria-selected="false" aria-label="Slide 3: Consultation Cabin"></button>
+    <button type="button" role="tab" aria-selected="false" aria-label="Slide 4: Athlete Spine Therapy"></button>
+    <button type="button" role="tab" aria-selected="false" aria-label="Slide 5: Cupping Therapy"></button>
+  </div>
 </section>
 
 <section class="section">
   <div class="container split split--why">
     <div class="collage collage--home" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1645005512968-0c1fe99f0093?auto=format&fit=crop&q=75&w=800" alt="" width="289" height="385" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1645005513713-9e2b92a687d3?auto=format&fit=crop&q=75&w=800" alt="" width="319" height="167" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1645005513751-e22717a66ae6?auto=format&fit=crop&q=75&w=800" alt="" width="319" height="312" loading="lazy">
+      <img src="assets/img/gallery/clinic-therapy-room-electrotherapy.jpg" alt="Physiotherapy clinic treatment bay with electrotherapy equipment" width="1204" height="1600" loading="lazy">
+      <img src="assets/img/gallery/clinic-storefront-entrance.jpg" alt="Health &amp; Sport Physiotherapy Center entrance" width="1600" height="1204" loading="lazy">
+      <img src="assets/img/gallery/clinic-rehab-bay-anatomy.jpg" alt="Clinic rehabilitation area with anatomy chart and finger ladder" width="1600" height="1204" loading="lazy">
     </div>
     <div class="why__text">
       <p class="eyebrow">Why Choose us</p>
@@ -56,18 +80,24 @@
       <a class="btn btn--dark" href="services.html">See All Services</a>
     </div>
     <div class="services__grid">
-      <article class="service"><div class="service__media"><img src="https://images.unsplash.com/photo-1645005513713-9e2b92a687d3?auto=format&fit=crop&q=75&w=800" alt="Sports Physiotherapy" width="317" height="237" loading="lazy"></div>
-        <div class="service__body"><h3 class="service__title">Sports Physiotherapy</h3><p class="service__text">Get back in the game, stronger</p></div></article>
-      <article class="service"><div class="service__media"><img src="https://images.unsplash.com/photo-1649751361457-01d3a696c7e6?auto=format&fit=crop&q=75&w=800" alt="Sports Injury Rehabilitation" width="317" height="237" loading="lazy"></div>
-        <div class="service__body"><h3 class="service__title">Sports Injury Rehabilitation</h3><p class="service__text">Safe recovery, guided every step</p></div></article>
-      <article class="service"><div class="service__media"><img src="https://images.unsplash.com/photo-1645005512968-0c1fe99f0093?auto=format&fit=crop&q=75&w=800" alt="Sports Massage Therapy" width="317" height="237" loading="lazy"></div>
-        <div class="service__body"><h3 class="service__title">Sports Massage Therapy</h3><p class="service__text">Release tension, speed up recovery</p></div></article>
-      <article class="service"><div class="service__media"><img src="https://images.unsplash.com/photo-1540205895360-4ad4cffb3aa8?auto=format&fit=crop&q=75&w=800" alt="Orthopaedic Physiotherapy" width="317" height="237" loading="lazy"></div>
-        <div class="service__body"><h3 class="service__title">Orthopaedic Physiotherapy</h3><p class="service__text">Care for bones, joints &amp; muscles</p></div></article>
-      <article class="service"><div class="service__media"><img src="https://images.unsplash.com/photo-1645005513751-e22717a66ae6?auto=format&fit=crop&q=75&w=800" alt="Post Surgery Physiotherapy" width="317" height="237" loading="lazy"></div>
-        <div class="service__body"><h3 class="service__title">Post Surgery Physiotherapy</h3><p class="service__text">Regain strength and movement</p></div></article>
-      <article class="service"><div class="service__media"><img src="https://images.unsplash.com/photo-1706353399656-210cca727a33?auto=format&fit=crop&q=75&w=800" alt="PIVD Treatment" width="317" height="237" loading="lazy"></div>
-        <div class="service__body"><h3 class="service__title">PIVD Treatment</h3><p class="service__text">Relief for prolapsed disc pain</p></div></article>
+      <article class="service"><div class="service__media"><img src="assets/img/gallery/sports-electrotherapy-session.jpg" alt="Physiotherapy for Sports Injury Rehabilitation" width="1600" height="1200" loading="lazy"></div>
+        <div class="service__body"><h3 class="service__title">Sports Injury Rehabilitation</h3><p class="service__text">Physiotherapy for sports injury recovery, guided every step</p></div></article>
+      <article class="service"><div class="service__media"><img src="assets/img/gallery/spine-mri-assessment.jpg" alt="PIVD (Prolapsed Intervertebral Disc)" width="719" height="1600" style="object-position:center 22%" loading="lazy"></div>
+        <div class="service__body"><h3 class="service__title">PIVD (Prolapsed Disc)</h3><p class="service__text">Targeted decompression and relief for prolapsed intervertebral disc</p></div></article>
+      <article class="service"><div class="service__media"><img src="assets/img/gallery/post-surgery-neuro-rehab.jpg" alt="Post Surgery Physiotherapy" width="1600" height="1200" style="object-position:center 25%" loading="lazy"></div>
+        <div class="service__body"><h3 class="service__title">Post Surgery Physiotherapy</h3><p class="service__text">Regain mobility, strength and confidence after surgery</p></div></article>
+      <article class="service"><div class="service__media"><img src="assets/img/gallery/dr-gaurav-shukla-desk.jpg" alt="Orthopaedic Physiotherapy" width="1600" height="1204" loading="lazy"></div>
+        <div class="service__body"><h3 class="service__title">Orthopaedic Physiotherapy</h3><p class="service__text">Specialized care for bones, joints, muscles &amp; ligaments</p></div></article>
+      <article class="service"><div class="service__media"><img src="assets/img/gallery/athlete-manual-spine-therapy.jpg" alt="Sports Physiotherapy" width="1200" height="1600" style="object-position:center 65%" loading="lazy"></div>
+        <div class="service__body"><h3 class="service__title">Sports Physiotherapy</h3><p class="service__text">Get back in the game, stronger and pain-free</p></div></article>
+      <article class="service"><div class="service__media"><img src="assets/img/gallery/field-physio-stretching.jpg" alt="Sports Massage Therapy" width="720" height="325" loading="lazy"></div>
+        <div class="service__body"><h3 class="service__title">Sports Massage Therapy</h3><p class="service__text">Release muscle tension and speed up athletic recovery</p></div></article>
+      <article class="service"><div class="service__media"><img src="assets/img/gallery/cupping-therapy-clinical.jpg" alt="Rheumatoid Arthritis Physiotherapy" width="1600" height="1200" loading="lazy"></div>
+        <div class="service__body"><h3 class="service__title">Rheumatoid Arthritis Physio</h3><p class="service__text">Gentle joint mobility, swelling relief &amp; strength care</p></div></article>
+      <article class="service"><div class="service__media"><img src="assets/img/gallery/cricket-rehab-field.jpg" alt="Neurophysiotherapy" width="634" height="956" style="object-position:center 25%" loading="lazy"></div>
+        <div class="service__body"><h3 class="service__title">Neurophysiotherapy</h3><p class="service__text">Focused neurological balance, coordination &amp; functional rehab</p></div></article>
+      <article class="service"><div class="service__media"><img src="assets/img/gallery/cupping-back-detox.jpg" alt="Sports Injury Treatment &amp; Cupping" width="1600" height="1200" loading="lazy"></div>
+        <div class="service__body"><h3 class="service__title">Sports Injury &amp; Cupping</h3><p class="service__text">Acute sports injury treatment, dry needling &amp; cupping therapy</p></div></article>
     </div>
   </div>
 </section>
@@ -79,9 +109,9 @@
   </div>
 </section>
 
-<section class="video-band" aria-label="Clinic video">
-  <img src="https://images.unsplash.com/photo-1630226040750-d934f017f0e4?auto=format&fit=crop&q=75&w=1800" alt="" loading="lazy">
-  <button class="play-btn js-video" type="button" data-video="" aria-label="Play video"><img src="assets/img/play-large.svg" alt="" width="111" height="111"></button>
+<section class="video-band" aria-label="Clinic and athletes showcase">
+  <img src="assets/img/gallery/athletes-team-physio-squad.jpg" alt="Athletes and sports physiotherapist at Health &amp; Sport Physio" style="object-position:center 28%" loading="lazy">
+  <a class="play-btn" href="gallery.html" aria-label="View clinic &amp; sports photo gallery"><img src="assets/img/play-large.svg" alt="" width="111" height="111"></a>
 </section>
 
 <section class="section">
@@ -89,7 +119,7 @@
     <div class="section-head"><p class="eyebrow">Getting Started is Easy</p><h2 class="h2">Your Recovery Starts in 3 Simple Steps</h2></div>
     <ol class="steps">
       <li class="step"><span class="step__num">01</span><h3 class="step__title">Book Online or Call Us</h3><p class="step__text">Call +91 94152 88277 or walk in — we’re here to help.</p></li>
-      <li class="step step--feature"><img src="https://images.unsplash.com/photo-1645005512827-48ff6f97848a?auto=format&fit=crop&q=75&w=1200" alt="" loading="lazy"><span class="step__num">02</span><h3 class="step__title">Come In for a Full Assessment</h3><p class="step__text">We’ll take the time to understand your needs and goals.</p></li>
+      <li class="step step--feature"><img src="assets/img/gallery/dr-gaurav-shukla-desk.jpg" alt="Consultation at Health &amp; Sport Physiotherapy Center" loading="lazy"><span class="step__num">02</span><h3 class="step__title">Come In for a Full Assessment</h3><p class="step__text">We’ll take the time to understand your needs and goals.</p></li>
       <li class="step"><span class="step__num">03</span><h3 class="step__title">Start Your Personalised Treatment Plan</h3><p class="step__text">Get expert care tailored just for you.</p></li>
     </ol>
   </div>
@@ -119,28 +149,28 @@
         <p class="eyebrow">Clinic &amp; Sports Gallery</p>
         <h2 class="h2">Real Moments. Proven Care in Action</h2>
       </div>
-      <a class="btn btn--dark" href="gallery.html">View Full Gallery (13+ Photos)</a>
+      <a class="btn btn--dark" href="gallery.html">View Full Gallery (26 Photos)</a>
     </div>
     <div class="home-gallery-grid">
       <div class="home-gallery-item home-gallery-item--span2 home-gallery-item--row2" data-lightbox data-src="assets/img/gallery/police-basketball-championship.jpg" data-title="UP Police Basketball Championship" data-caption="Official sports physiotherapy partner for state basketball tournament.">
         <img src="assets/img/gallery/police-basketball-championship.jpg" alt="UP Police Basketball Championship" loading="lazy">
         <div class="home-gallery-item__caption">UP Police Basketball Championship — Official Sports Physio Support</div>
       </div>
-      <div class="home-gallery-item" data-lightbox data-src="assets/img/gallery/championship-trophy-winner.jpg" data-title="Championship Trophy Presentation" data-caption="Corporate tournament championship winner with tournament trophy.">
-        <img src="assets/img/gallery/championship-trophy-winner.jpg" alt="Championship Trophy Winner" loading="lazy">
-        <div class="home-gallery-item__caption">Tournament Winner Celebration</div>
+      <div class="home-gallery-item" data-lightbox data-src="assets/img/gallery/athlete-manual-spine-therapy.jpg" data-title="On-Ground Manual Spine Therapy" data-caption="Hands-on lower back mobilization and athletic muscle release session.">
+        <img src="assets/img/gallery/athlete-manual-spine-therapy.jpg" alt="Athlete Manual Spine Therapy" style="object-position:center 65%" loading="lazy">
+        <div class="home-gallery-item__caption">Athlete Manual Spine Therapy</div>
       </div>
-      <div class="home-gallery-item" data-lightbox data-src="assets/img/gallery/cricket-rehab-field.jpg" data-title="On-Field Shoulder Rehabilitation" data-caption="Targeted manual therapy on cricket field.">
-        <img src="assets/img/gallery/cricket-rehab-field.jpg" alt="On-Field Shoulder Rehab" loading="lazy">
-        <div class="home-gallery-item__caption">On-Field Matchday Rehabilitation</div>
+      <div class="home-gallery-item" data-lightbox data-src="assets/img/gallery/sports-electrotherapy-session.jpg" data-title="Sports Electrotherapy Session" data-caption="Targeted IFT &amp; electrical stimulation therapy for shoulder and arm recovery.">
+        <img src="assets/img/gallery/sports-electrotherapy-session.jpg" alt="Sports Electrotherapy Session" loading="lazy">
+        <div class="home-gallery-item__caption">Electrotherapy &amp; Muscle Recovery</div>
       </div>
-      <div class="home-gallery-item" data-lightbox data-src="assets/img/gallery/field-physio-stretching.jpg" data-title="Assisted Stretching Session" data-caption="Manual hamstring and spine mobilization on ground.">
-        <img src="assets/img/gallery/field-physio-stretching.jpg" alt="Assisted Stretching Session" loading="lazy">
-        <div class="home-gallery-item__caption">Fieldside Stretching &amp; Mobility</div>
+      <div class="home-gallery-item" data-lightbox data-src="assets/img/gallery/cupping-back-detox.jpg" data-title="Clinical Cupping Therapy" data-caption="Vacuum cupping therapy for chronic back pain, stiffness, and muscle recovery.">
+        <img src="assets/img/gallery/cupping-back-detox.jpg" alt="Clinical Cupping Therapy" loading="lazy">
+        <div class="home-gallery-item__caption">Cupping &amp; Myofascial Release</div>
       </div>
-      <div class="home-gallery-item" data-lightbox data-src="assets/img/gallery/trophy-presentation-ceremony.jpg" data-title="Champions Team Celebration" data-caption="Winners celebrating victory with sports physiotherapy team.">
-        <img src="assets/img/gallery/trophy-presentation-ceremony.jpg" alt="Trophy Presentation Ceremony" loading="lazy">
-        <div class="home-gallery-item__caption">Cricket League Champions Squad</div>
+      <div class="home-gallery-item" data-lightbox data-src="assets/img/gallery/clinic-storefront-entrance.jpg" data-title="Health &amp; Sport Physiotherapy Center" data-caption="Our clinic in Jankipuram, Lucknow led by Dr. Gaurav Shukla (UP Police SCB).">
+        <img src="assets/img/gallery/clinic-storefront-entrance.jpg" alt="Clinic Storefront Entrance" loading="lazy">
+        <div class="home-gallery-item__caption">Our Jankipuram Clinic Center</div>
       </div>
       <div class="home-gallery-item home-gallery-item--span2" data-lightbox data-src="assets/img/gallery/newspaper-coverage-lucknow-times.jpg" data-title="Lucknow Times Press Feature" data-caption="Media coverage in Times of India / Lucknow Times.">
         <img src="assets/img/gallery/newspaper-coverage-lucknow-times.jpg" alt="Lucknow Times Media Feature" loading="lazy">
@@ -155,8 +185,8 @@
   <div class="container">
     <div class="section-head"><p class="eyebrow">do you have questions?</p><h2 class="h2">Frequently Asked Questions</h2></div>
     <div class="faq">
-      <img class="faq__img" src="https://images.unsplash.com/photo-1545463913-5083aa7359a6?auto=format&fit=crop&q=75&w=700" alt="" loading="lazy">
-      <img class="faq__img" src="https://images.unsplash.com/photo-1712215544003-af10130f8eb3?auto=format&fit=crop&q=75&w=700" alt="" loading="lazy">
+      <img class="faq__img" src="assets/img/gallery/clinic-infrared-therapy-bed.jpg" alt="Infrared heat therapy and treatment bed at the clinic" loading="lazy">
+      <img class="faq__img" src="assets/img/gallery/clinic-outdoor-signboard.jpg" alt="Health &amp; Sport Physiotherapy Center consulting hours and services board" loading="lazy">
       <div class="faq__panel">
         <div class="faq-item">
           <h3><button class="faq-q" type="button" id="faq-q1" aria-expanded="false" aria-controls="faq-a1"><span class="faq-q__text">1. What should I expect during my first visit?</span><img class="faq-q__icon" src="assets/img/icon-faq-plus.svg" alt="" width="32" height="32"></button></h3>

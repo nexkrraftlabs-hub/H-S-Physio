@@ -5,6 +5,91 @@
   var root = document.documentElement;
   var body = document.body;
 
+  /* ---------- Hero photo slider ---------- */
+  document.querySelectorAll("[data-hero-slider]").forEach(function (hero) {
+    var slides = Array.prototype.slice.call(hero.querySelectorAll(".hero__slide"));
+    var dots = Array.prototype.slice.call(hero.querySelectorAll(".hero__dots button"));
+    var prevBtn = hero.querySelector(".hero__arrow--prev");
+    var nextBtn = hero.querySelector(".hero__arrow--next");
+    if (slides.length < 2) return;
+
+    var current = 0;
+    var timer = null;
+    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function goTo(index) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach(function (slide, idx) {
+        var active = idx === current;
+        slide.classList.toggle("is-active", active);
+        slide.setAttribute("aria-hidden", active ? "false" : "true");
+      });
+      dots.forEach(function (dot, idx) {
+        var active = idx === current;
+        dot.classList.toggle("is-active", active);
+        dot.setAttribute("aria-selected", active ? "true" : "false");
+      });
+    }
+
+    function startAuto() {
+      if (reducedMotion) return;
+      stopAuto();
+      timer = window.setInterval(function () { goTo(current + 1); }, 5000);
+    }
+
+    function stopAuto() {
+      if (timer) {
+        window.clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        goTo(current - 1);
+        startAuto();
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        goTo(current + 1);
+        startAuto();
+      });
+    }
+    dots.forEach(function (dot, idx) {
+      dot.addEventListener("click", function () {
+        goTo(idx);
+        startAuto();
+      });
+    });
+
+    hero.addEventListener("mouseenter", stopAuto);
+    hero.addEventListener("mouseleave", startAuto);
+    hero.addEventListener("focusin", stopAuto);
+    hero.addEventListener("focusout", startAuto);
+
+    hero.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") { goTo(current - 1); startAuto(); }
+      if (e.key === "ArrowRight") { goTo(current + 1); startAuto(); }
+    });
+
+    var touchStartX = 0;
+    hero.addEventListener("touchstart", function (e) {
+      if (e.touches[0]) touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    hero.addEventListener("touchend", function (e) {
+      if (!e.changedTouches[0]) return;
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 40) {
+        goTo(dx > 0 ? current - 1 : current + 1);
+        startAuto();
+      }
+    }, { passive: true });
+
+    goTo(0);
+    startAuto();
+  });
+
   /* ---------- Sticky / Transparent Header on scroll ---------- */
   function handleScroll() {
     var header = document.querySelector(".site-header");
@@ -205,6 +290,59 @@
       var caption = el.getAttribute("data-caption") || el.querySelector("p")?.textContent || "";
       if (src) openLightbox(src, title, caption);
     });
+  });
+
+  /* ---------- Services directory tabs & search ---------- */
+  document.querySelectorAll("[data-services-dir]").forEach(function (dir) {
+    var tabs = Array.prototype.slice.call(dir.querySelectorAll("[data-service-cat]"));
+    var groups = Array.prototype.slice.call(dir.querySelectorAll(".service-dir-group"));
+    var searchInput = dir.querySelector("#service-search");
+    var emptyState = dir.querySelector(".services-dir__empty");
+    var activeCat = "all";
+
+    function applyFilter() {
+      var query = searchInput ? searchInput.value.trim().toLowerCase() : "";
+      var visibleTotal = 0;
+
+      groups.forEach(function (group) {
+        var cat = group.getAttribute("data-category");
+        var catMatch = activeCat === "all" || cat === activeCat;
+        var items = Array.prototype.slice.call(group.querySelectorAll(".service-dir-item"));
+        var groupVisible = 0;
+
+        items.forEach(function (item) {
+          var text = item.textContent.toLowerCase();
+          var show = catMatch && (!query || text.indexOf(query) !== -1);
+          item.classList.toggle("is-hidden", !show);
+          if (show) {
+            groupVisible += 1;
+            visibleTotal += 1;
+          }
+        });
+
+        group.classList.toggle("is-hidden", groupVisible === 0);
+      });
+
+      if (emptyState) {
+        emptyState.classList.toggle("is-visible", visibleTotal === 0);
+      }
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        activeCat = tab.getAttribute("data-service-cat") || "all";
+        tabs.forEach(function (t) {
+          var isCurrent = t === tab;
+          t.classList.toggle("is-active", isCurrent);
+          t.setAttribute("aria-selected", isCurrent ? "true" : "false");
+        });
+        applyFilter();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener("input", applyFilter);
+    }
   });
 
   /* ---------- Date & Time field: text until focused, then native picker ---------- */
